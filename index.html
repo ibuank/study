@@ -43,7 +43,19 @@
 <footer>
   <p>© 2026 Study Note</p>
 </footer>
+  <script>
+const search = document.getElementById("subjectSearch");
+const cards = document.querySelectorAll(".card");
 
+search.addEventListener("input", () => {
+  const keyword = search.value.toLowerCase();
+
+  cards.forEach(card => {
+    const text = card.innerText.toLowerCase();
+    card.style.display = text.includes(keyword) ? "block" : "none";
+  });
+});
+</script>
 </body>
 </html>
 
